@@ -4,23 +4,49 @@
 # Save user data to a file and load it automatically on startup
 # Allow exporting reports as text/pdf files for offline use
 
-from matplotlib import pyplot as plt
+class BudgetManager:
+    def __init__(self,balance,income,expenses):
+        self.income = income
+        self.balance = balance
+        self.expenses = expenses
+    
+    def check_balance(self):
+        return f'Your balance is ${self.balance}'
 
-x_values = [1, 2, 3, 4]
-y_values = [5, 4, 6, 2]
+    def add_income(self):
+        pass
 
-plt.scatter(x_values, y_values)
+    def add_expense(self):
+        pass
 
-other_x_values = [1, 2, 3, 4]
-other_y_values = [4, 2, 3, 9]
 
-plt.plot(other_x_values, other_y_values, color="navy")
 
-plt.title("Sample Plot")
-plt.xlabel("X Values")
-plt.ylabel("Y Values")
 
-plt.show()
+# Main
+def main():
+    manager = BudgetManager(0, 0, 0)
+    while True:
+        print("\nPlease select an option from the menu below\n")
+        print("1. Check your balance.")
+        print("2. Add income.")
+        print("3. Add an expense.")
+
+        choice = input("Please enter a number and press Enter.\n")
+
+        if choice == "1":
+            print(manager.check_balance())
+
+        elif choice == "2":
+            manager.add_income
+
+        elif choice == "3":
+            manager.add_expense
+        
+        else:
+            print("Your option is not valid")
+
+
+main()      
 
 
 
