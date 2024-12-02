@@ -4,23 +4,8 @@
 # Save user data to a file and load it automatically on startup
 # Allow exporting reports as text/pdf files for offline use
 
-class BudgetManager:
-    def __init__(self,balance,income,expenses):
-        self.income = income
-        self.balance = balance
-        self.expenses = expenses
-    
-    def check_balance(self):
-        return f'Your balance is ${self.balance}'
-
-    def add_income(self):
-        pass
-
-    def add_expense(self):
-        pass
-
-
-
+from budget_manager import BudgetManager 
+from transaction import Transaction
 
 # Main
 def main():
@@ -37,7 +22,8 @@ def main():
             print(manager.check_balance())
 
         elif choice == "2":
-            manager.add_income
+            income = input(float("Amount of income: "))
+            manager.add_income(income)
 
         elif choice == "3":
             manager.add_expense
